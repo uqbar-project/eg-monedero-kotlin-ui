@@ -1,5 +1,7 @@
 # Monedero - Kotlin + Compose for Desktop
 
+[![Build](https://github.com/uqbar-project/eg-monedero-kotlin-ui/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-monedero-kotlin-ui/actions/workflows/build.yml)
+
 Port a Kotlin del ejercicio [eg-monedero-xtend](https://github.com/uqbar-project/eg-monedero-xtend) (branch `simple`),
 con una UI desktop hecha en [Compose Multiplatform](https://www.jetbrains.com/compose-multiplatform/).
 
@@ -23,3 +25,8 @@ con una UI desktop hecha en [Compose Multiplatform](https://www.jetbrains.com/co
 ```
 
 Requiere JDK 21.
+
+## CI
+
+GitHub Actions corre `./gradlew build` (compila y ejecuta los tests) en cada push a `master` y en cada pull request.
+Si falla, el reporte HTML de los tests queda disponible como artifact del workflow.
