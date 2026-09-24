@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "2.4.20"
     id("org.jetbrains.compose") version "1.12.1"
     id("org.jetbrains.kotlin.plugin.compose") version "2.4.20"
+    id("org.jetbrains.kotlinx.kover") version "0.9.9"
 }
 
 group = "ar.edu.monedero"
