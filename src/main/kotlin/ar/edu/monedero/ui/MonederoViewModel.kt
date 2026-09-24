@@ -39,10 +39,6 @@ class MonederoViewModel(private val monedero: Monedero) {
 
     private fun operar(operacion: (BigDecimal) -> Unit) {
         val cuanto = montoIngresado.toBigDecimalOrNull()
-        if (cuanto == null) {
-            error = "Ingresá un monto"
-            return
-        }
         try {
             operacion(cuanto)
             monto = monedero.monto
