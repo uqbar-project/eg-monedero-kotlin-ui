@@ -59,10 +59,10 @@ fun MonederoScreen(viewModel: MonederoViewModel) {
         )
 
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Button(onClick = viewModel::poner, modifier = Modifier.weight(1f), enabled = viewModel.montoIngresado != "") {
+            Button(onClick = viewModel::poner, modifier = Modifier.weight(1f), enabled = viewModel.puedeOperar) {
                 Text("Poner")
             }
-            OutlinedButton(onClick = viewModel::sacar, modifier = Modifier.weight(1f), enabled = viewModel.montoIngresado != "") {
+            OutlinedButton(onClick = viewModel::sacar, modifier = Modifier.weight(1f), enabled = viewModel.puedeOperar) {
                 Text("Sacar")
             }
         }

@@ -59,6 +59,21 @@ class MonederoViewModelTest : DescribeSpec({
                 viewModel.ingresarMonto("")
                 viewModel.montoIngresado shouldBe ""
             }
+
+            it("no se puede operar mientras no haya un monto parseable") {
+                viewModel.puedeOperar shouldBe false
+                viewModel.ingresarMonto("-")
+                viewModel.puedeOperar shouldBe false
+                viewModel.ingresarMonto(".")
+                viewModel.puedeOperar shouldBe false
+            }
+
+            it("se puede operar en cuanto hay un número, aunque el dominio después lo rechace") {
+                viewModel.ingresarMonto("12.")
+                viewModel.puedeOperar shouldBe true
+                viewModel.ingresarMonto("-10")
+                viewModel.puedeOperar shouldBe true
+            }
         }
 
         describe("al operar") {
@@ -96,18 +111,6 @@ class MonederoViewModelTest : DescribeSpec({
                 viewModel.poner()
                 viewModel.montoIngresado shouldBe "0"
                 viewModel.error.shouldNotBeNull() shouldContain "positivo"
-            }
-
-            it("operar sin monto informa un error") {
-                viewModel.poner()
-                viewModel.error shouldBe "Ingresá un monto"
-                viewModel.monto shouldBe BigDecimal(100)
-            }
-
-            it("operar con sólo el signo menos también informa un error") {
-                viewModel.ingresarMonto("-")
-                viewModel.sacar()
-                viewModel.error shouldBe "Ingresá un monto"
             }
 
             it("cerrar el error lo limpia") {

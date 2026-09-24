@@ -22,6 +22,10 @@ class MonederoViewModel(private val monedero: Monedero) {
     var error: String? by mutableStateOf(null)
         private set
 
+    /** Hay algo parseable en el campo. La vista lo usa para habilitar las acciones. */
+    val puedeOperar: Boolean
+        get() = montoIngresado.toBigDecimalOrNull() != null
+
     /** Acepta un signo menos opcional, dígitos y un punto decimal opcional; cualquier otro texto se ignora. */
     fun ingresarMonto(texto: String) {
         if (FORMATO_MONTO.matches(texto)) {
@@ -38,9 +42,8 @@ class MonederoViewModel(private val monedero: Monedero) {
     }
 
     private fun operar(operacion: (BigDecimal) -> Unit) {
-        val cuanto = montoIngresado.toBigDecimalOrNull()
         try {
-            operacion(cuanto)
+            operacion(montoIngresado.toBigDecimal())
             monto = monedero.monto
             montoIngresado = ""
         } catch (excepcion: BusinessException) {
