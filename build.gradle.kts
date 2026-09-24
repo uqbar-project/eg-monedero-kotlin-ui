@@ -38,9 +38,20 @@ tasks.test {
     }
 }
 
+kover {
+    reports {
+        filters {
+            excludes {
+                // La raíz de composición (main + Window) sólo se puede ejecutar abriendo una ventana real.
+                classes("ar.edu.monedero.ui.MainKt", "ar.edu.monedero.ui.ComposableSingletons\$MainKt")
+            }
+        }
+    }
+}
+
 compose.desktop {
     application {
-        mainClass = "ar.edu.monedero.ui.MonederoAppKt"
+        mainClass = "ar.edu.monedero.ui.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
