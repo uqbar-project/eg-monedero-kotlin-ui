@@ -1,7 +1,7 @@
 # Monedero - Kotlin + Compose for Desktop
 
 [![Build](https://github.com/uqbar-project/eg-monedero-kotlin-ui/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-monedero-kotlin-ui/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/uqbar-project/eg-monedero-kotlin-ui/graph/badge.svg)](https://codecov.io/gh/uqbar-project/eg-monedero-kotlin-ui)
+[![codecov](https://codecov.io/gh/uqbar-project/eg-monedero-kotlin-ui/graph/badge.svg?token=nZjvXoFAAX)](https://codecov.io/gh/uqbar-project/eg-monedero-kotlin-ui)
 
 Port a Kotlin del ejercicio [eg-monedero-xtend](https://github.com/uqbar-project/eg-monedero-xtend) (branch `simple`),
 con una UI desktop hecha en [Compose Multiplatform](https://www.jetbrains.com/compose-multiplatform/).
