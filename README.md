@@ -8,7 +8,7 @@ con una UI desktop hecha en [Compose Multiplatform](https://www.jetbrains.com/co
 ## Conceptos a ver
 
 - Manejo de errores con excepciones de negocio (`BusinessException`).
-- Testeo unitario de los errores.
+- Testeo unitario de los errores, con [Kotest](https://kotest.io/) en estilo `DescribeSpec`.
 - Cómo mostrar una excepción de negocio como popup sin acoplar el dominio a la vista.
 
 ## Estructura
