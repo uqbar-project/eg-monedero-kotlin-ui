@@ -17,6 +17,7 @@ con una UI desktop hecha en [Compose Multiplatform](https://www.jetbrains.com/co
 - `domain` / `exceptions`: el modelo, idéntico al original. No importa nada de Compose.
 - `ui/MonederoViewModel`: wrapper de presentación. Es el único lugar que atrapa `BusinessException` y la deja en un estado observable (`error`).
 - `ui/MonederoApp`: la ventana. Cuando `error` no es nulo, muestra un `AlertDialog`.
+  La pantalla (`MonederoScreen`) se testea con Compose UI Test montándola con un view model real, sin abrir ventana.
 
 ## Cómo correrlo
 

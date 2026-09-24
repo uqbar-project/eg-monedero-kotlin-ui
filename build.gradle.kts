@@ -26,10 +26,13 @@ dependencies {
 
     testImplementation("io.kotest:kotest-runner-junit5:6.2.5")
     testImplementation("io.kotest:kotest-assertions-core:6.2.5")
+    testImplementation("org.jetbrains.compose.ui:ui-test:1.12.1")
 }
 
 tasks.test {
     useJUnitPlatform()
+    // Los tests de UI montan la pantalla en una escena offscreen; esto asegura que nunca abran una ventana.
+    systemProperty("java.awt.headless", "true")
     testLogging {
         events("passed", "failed", "skipped")
     }
